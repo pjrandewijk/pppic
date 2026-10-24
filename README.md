@@ -63,5 +63,7 @@ python -m unittest discover -s tests -v
 
 ## Licence
 
-BSD-2-Clause; see [LICENSE](LICENSE). pppic is a Python port of dpic by
-J. D. Aplevich, and keeps dpic's licence and copyright notice.
+pppic is released under the BSD-2-Clause licence, Copyright (c) 2026
+Peter Jan Randewijk; see [LICENSE](LICENSE). Because pppic is a Python port
+of dpic, which uses the same licence, the LICENSE also keeps dpic's notice,
+Copyright (c) 2025 J. D. Aplevich, as that licence requires.
