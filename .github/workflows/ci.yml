@@ -42,6 +42,6 @@ jobs:
       - name: Expand and compile
         run: |
           curl -fsSL -o circuit.m4 https://raw.githubusercontent.com/pjrandewijk/pym4/HEAD/examples/circuit.m4
-          pym4 -I circuit_macros circuit.m4 | pppic -p > circuit.tex
+          pym4 -I circuit_macros circuit.m4 | pppic > circuit.tex
           grep -q 'begin{pspicture}' circuit.tex
           cat circuit.tex

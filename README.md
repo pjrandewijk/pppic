@@ -8,6 +8,8 @@ A PIC processor written in pure Python that is compatible with
 like `dpic -p`. No compiler, no `dpic.exe`, no dependencies.
 
 The name follows gpic and dpic; the *pp* stands for **P**ython & **P**STricks.
+You can also read it as `ppic -p`: dpic's PSTricks option is built in, so pppic
+needs no `-p`.
 
 pppic implements the dpic language: macros (`define`), `for` loops,
 `if`/`else`, blocks, labels, positions, `copy`, `sprintf` and the object
@@ -30,11 +32,12 @@ pip install pppic
 
 ## Use
 
-Command line (`-p` is accepted for dpic compatibility; PSTricks is the only output):
+Command line (PSTricks is the only output, so no option is needed; `-p` is
+still accepted, so `dpic -p` in existing scripts can simply become `pppic -p`):
 
 ```
-pppic -p examples/shapes.pic > shapes.tex
-pym4 -I path/to/circuit_macros circuit.m4 | pppic -p > circuit.tex
+pppic examples/shapes.pic > shapes.tex
+pym4 -I path/to/circuit_macros circuit.m4 | pppic > circuit.tex
 ```
 
 Python:

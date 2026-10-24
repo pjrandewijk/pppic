@@ -83,11 +83,12 @@ class CommandLineTests(unittest.TestCase):
             (root / "lib" / "shapes.pic").write_text("define sq { box wid $1 ht $1 }\n", encoding="utf-8")
             (root / "fig.pic").write_text('.PS\ncopy "shapes.pic"\nsq(0.5)\n.PE\n', encoding="utf-8")
             output = root / "fig.tex"
-            code = main(["-p", "-I", str(root / "lib"), "-o", str(output), str(root / "fig.pic")])
-            text = output.read_text(encoding="utf-8")
-            self.assertEqual(code, 0)
-            self.assertIn("% pppic (dpic 2025.08.01 compatible)", text)
-            self.assertIn(r"\psframe(0,-0.25)(0.5,0.25)", text)
+            for dpic_option in ([], ["-p"]):
+                code = main([*dpic_option, "-I", str(root / "lib"), "-o", str(output), str(root / "fig.pic")])
+                text = output.read_text(encoding="utf-8")
+                self.assertEqual(code, 0)
+                self.assertIn("% pppic (dpic 2025.08.01 compatible)", text)
+                self.assertIn(r"\psframe(0,-0.25)(0.5,0.25)", text)
 
 
 class ExampleTests(unittest.TestCase):
