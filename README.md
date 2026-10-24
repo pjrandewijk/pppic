@@ -7,8 +7,7 @@ A PIC processor written in pure Python that is compatible with
 [dpic](https://ctan.org/pkg/dpic) 2025.08.01 and produces PSTricks output,
 like `dpic -p`. No compiler, no `dpic.exe`, no dependencies.
 
-The name follows gpic and dpic; the *ppp* stands for **P**ython,
-**P**STricks and **P**eter.
+The name follows gpic and dpic; the *pp* stands for **P**ython & **P**STricks.
 
 pppic implements the dpic language: macros (`define`), `for` loops,
 `if`/`else`, blocks, labels, positions, `copy`, `sprintf` and the object
