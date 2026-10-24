@@ -1,6 +1,6 @@
 .PS
-
-# Circuit Macros diagram pre-expanded by:  pym4 -I circuit_macros examples/circuit.m4  (pym4 repository)
+# pym4's examples/circuit.m4 with a V source (no dpictools.pic needed), pre-expanded by:
+#   pym4 -I circuit_macros circuit.m4
 # Run with:  pppic -p examples/circuit.pic > circuit.tex
 
 scale=25.4
@@ -19,7 +19,7 @@ scale=25.4
   twopi_ = 6.2831853071795862;  pi_ = (twopi_/2)
   rp_ang = 0;  right
   define dpictools_ {0}
-  define copydpictools_ {if "$1"=="" then { copy "C:/Users/prw/OneDrive/Circuit Macros/Circuit_macros11.1.3/Circuit_macros11.1.3/dpictools.pic";} \
+  define copydpictools_ {if "$1"=="" then { copy "circuit_macros/dpictools.pic";} \
     else { copy "$1/dpictools.pic"; } }
 
   linethick = 0.8
@@ -34,7 +34,6 @@ scale=25.4
 # cct_init end
 
 dx = 12.5
-
 dy = 12.5
 
 O: (0,0)
@@ -45,36 +44,13 @@ Vs: line invis  up dy from O
   { line to Here+(((rp_len/2-(0.25*linewid))*(cos(rp_ang))),((rp_len/2-(0.25*linewid))*(sin(rp_ang))))
     move to Here+((((0.25*linewid))*(cos(rp_ang))),(((0.25*linewid))*(sin(rp_ang))))
   { Src_C: circle rad (0.25*linewid)   at Here }
-  {[ Origin: Here
-     m4sd_ang = rp_ang; rp_ang = 0;  right;
- Start: Here+(-(linewid/3)/2,0)
- End:   Here+((linewid/3)/2,0)
-   move to Origin+(0,((1+1)/2-1)*(linewid/3)/3)
-   { S1:         [ Origin: (0,0)
-    Tmin: ((-(linewid/3)/2),0) ; Tmax: (((linewid/3)/2),0)
-    h = ((linewid/3)/2)-(-(linewid/3)/2)
-    f = twopi_/(linewid/3)
-    tm = 2*f
-    w0 = tm*(-(linewid/3)/2) + 2*(pi_/2)
-    h0 = -((-1+(((linewid/3)/6)/2))*(h)-(((linewid/3)/6)/2)/tm*(sin(tm*(h)+w0)-sin(w0)))/h;
-    n = (int(h/(twopi_/(tm/2)))+1)*12
-    for i = 0 to n do {
-      t = (-(linewid/3)/2)+((h0+(((linewid/3)/6)/2))*(h*i/n)-(((linewid/3)/6)/2)/tm*(sin(tm*(h*i/n)+w0)-sin(w0)));
-      M4S_[i]: (t,(((linewid/3)/6))*cos((f)*(t)+((pi_/2)))) }
-    Start: M4S_[0]
-    End: M4S_[n]
-    if !dpictools_ then { copydpictools_() }
-  dfitcurve(M4S_,n,)
-    ] with .Origin at Here }
-
- ;  up ; rp_ang = m4sd_ang
-   ]    with .Origin at Here}
+  {"\scriptsize$-$" at Here+(((-(0.25*linewid)/2)*(cos(rp_ang))),((-(0.25*linewid)/2)*(sin(rp_ang)))) }
+          {"\scriptsize$+$"  at Here+((((0.25*linewid)/2)*(cos(rp_ang))),(((0.25*linewid)/2)*(sin(rp_ang)))) }
   line from Here+((((0.25*linewid))*(cos(rp_ang))),(((0.25*linewid))*(sin(rp_ang)))) \
           to Here+(((rp_len/2)*(cos(rp_ang))),((rp_len/2)*(sin(rp_ang))))}
   {[box invis wid (0.25*linewid)*2 ht (0.25*linewid)*2] at Here+(((rp_len/2)*(cos(rp_ang))),((rp_len/2)*(sin(rp_ang))))}
   line to Here+(((rp_len)*(cos(rp_ang))),((rp_len)*(sin(rp_ang)))) invis ;              {"$ \mathbf{V}_s$" \
      at last [].w rjust };
-
 L:  line invis  right 2*dx
   rpoint__
 
@@ -88,7 +64,6 @@ L:  line invis  right 2*dx
    line from Here+(((3*(linewid/5)/2*2)*(cos(rp_ang))),((3*(linewid/5)/2*2)*(sin(rp_ang)))) to Here+((((rp_len+3*(linewid/5)/2*2)/2)*(cos(rp_ang))),(((rp_len+3*(linewid/5)/2*2)/2)*(sin(rp_ang)))) }
    line to Here+(((rp_len)*(cos(rp_ang))),((rp_len)*(sin(rp_ang)))) invis ;   {"$ jX_s$" \
      at last [].n above };
-
 Zl: line invis  down to (Here.x,O.y)
   rpoint__
 
@@ -103,12 +78,9 @@ Zl: line invis  down to (Here.x,O.y)
  {[ box invis wid linewid/5 ht linewid/2 ] at Here+(((rp_len/2)*(cos(rp_ang))),((rp_len/2)*(sin(rp_ang))))}
       line to Here+(((rp_len)*(cos(rp_ang))),((rp_len)*(sin(rp_ang)))) invis ;          {"$ \mathbf{Z}_l$" \
      at last [].e ljust };
-
     line to O
-
     [       circle rad (0.04*linewid) fill 0     ] at Here
   move to last []
-
     box invis ht 0 wid 0 with .c at Here
     {  m4sd_ang = rp_ang; rp_ang = ((-90)*(dtor_))  ;
   line from last box.c to Here+(((linewid/4)*(cos(rp_ang))),((linewid/4)*(sin(rp_ang))))
