@@ -1,0 +1,10 @@
+.PS
+# pppic example. Run with:  pppic -p examples/shapes.pic > shapes.tex
+B: box "box"
+   arrow
+C: circle "circle"
+   arrow
+E: ellipse "ellipse"
+   line -> from B.s down 0.4 then right E.x-B.x then up 0.4
+"\textit{PSTricks from pure Python}" at C.s + (0,-0.7)
+.PE
