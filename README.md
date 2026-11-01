@@ -1,4 +1,4 @@
-# pppic
+# P&P-PIC/pppic
 
 [![CI](https://github.com/pjrandewijk/pppic/actions/workflows/ci.yml/badge.svg)](https://github.com/pjrandewijk/pppic/actions/workflows/ci.yml)
 [![PyPI](https://img.shields.io/pypi/v/pppic?label=PyPI)](https://pypi.org/project/pppic/)
