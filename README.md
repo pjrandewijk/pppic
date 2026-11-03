@@ -1,13 +1,13 @@
-# PP-PIC/pppic
+# pppic
 
 [![CI](https://github.com/pjrandewijk/pppic/actions/workflows/ci.yml/badge.svg)](https://github.com/pjrandewijk/pppic/actions/workflows/ci.yml)
 [![PyPI](https://img.shields.io/pypi/v/pppic?label=PyPI)](https://pypi.org/project/pppic/)
 
-PP-PIC/pppic is a PIC "compiler" written in pure Python that is compatible with
+pppic is a PIC "compiler" written in pure Python that is compatible with
 [dpic](https://ctan.org/pkg/dpic) 2025.08.01 and produces PSTricks output,
-like `dpic -p`. No compiler, no `dpic.exe`, no dependencies.
+like `dpic -p`. No c-compiler, no `dpic.exe`, no dependencies.
 
-The name follows gpic and dpic; the *pp* stands for **P**ython / **P**STricks.
+The name follows gpic [GNU pic](https://linux.die.net/man/1/gpic) and dpic [Dwight pi](https://ece.uwaterloo.ca/~aplevich/dpic/); the *pp* stands for either **P**eter's **P**ython pic or **P**ython / **P**STricks pic.
 You can also read it as `ppic -p`: dpic's PSTricks option is built in, so pppic
 needs no `-p`.
 
