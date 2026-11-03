@@ -7,9 +7,9 @@ pppic is a PIC "compiler" written in pure Python that is compatible with
 [dpic](https://ctan.org/pkg/dpic) 2025.08.01 and produces PSTricks output,
 like `dpic -p`. No c++-compiler, no `dpic.exe`, no dependencies.
 
-The name follows gpic, i.e. [GNU pic](https://linux.die.net/man/1/gpic) and dpic, i.e. [Dwight's pic](https://ece.uwaterloo.ca/~aplevich/dpic/) and thus pppic, stands for **P**eter's **P**ython / **P**STricks pic...
-Basically `pppic` is the equivalent of  `dpic -p` with the PSTricks option (`-p`) is built in.
-needs no `-p`.
+The name follows `gpic`, i.e. [GNU pic](https://linux.die.net/man/1/gpic) and `dpic`, i.e. [Dwight's pic](https://ece.uwaterloo.ca/~aplevich/dpic/) and thus `pppic`, stands for **P**eter's **P**ython / **P**STricks pic...
+
+Basically `pppic` is the equivalent of  `dpic -p` with the PSTricks option (`-p`) is built in, and thus no needs for an extra `-p` -- it is already in the name...
 
 pppic implements the dpic language: macros (`define`), `for` loops,
 `if`/`else`, blocks, labels, positions, `copy`, `sprintf` and the object
